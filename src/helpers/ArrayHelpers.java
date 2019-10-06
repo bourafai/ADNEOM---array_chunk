@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author Aymene Bourafai
  *
  */
-public class ArrayHelpers extends Helper {
+public class ArrayHelpers {
 
 	/**
 	 * Chunks an array into arrays with size elements. The last chunk may contain
@@ -95,6 +95,6 @@ public class ArrayHelpers extends Helper {
 	 * @return Returns a multidimensional array of chunks | null
 	 */
 	public static int[][] arrayChunk(int[] input, int size) {
-		return arrayChunk(input, size, true);
+		return arrayChunk(input, size, false);
 	}
 }

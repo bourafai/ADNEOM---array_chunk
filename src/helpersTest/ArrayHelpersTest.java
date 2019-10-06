@@ -3,9 +3,7 @@ package helpersTest;
 import static org.junit.Assert.*;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import helpers.ArrayHelpers;
@@ -54,27 +52,28 @@ public class ArrayHelpersTest {
 		int[][] outputArrayUnique = { { -5 } };
 
 		// tests on array with multiple values
-		assertNull(ArrayHelpers.arrayChunk(inputArrayMultiple, -4)); // negative
-		assertNull(ArrayHelpers.arrayChunk(inputArrayMultiple, 0)); // no size
+		assertNull(ArrayHelpers.arrayChunk(inputArrayMultiple, -4, true)); // negative
+		assertNull(ArrayHelpers.arrayChunk(inputArrayMultiple, 0, true)); // no size
 
-		assertArrayEquals(outputArrayMultiple1, ArrayHelpers.arrayChunk(inputArrayMultiple, 1)); // every digit alone
-		assertArrayEquals(outputArrayMultiple2, ArrayHelpers.arrayChunk(inputArrayMultiple, 2)); // by pair
-		assertArrayEquals(outputArrayMultiple3, ArrayHelpers.arrayChunk(inputArrayMultiple, 6)); // smaller size
-		assertArrayEquals(outputArrayMultiple7, ArrayHelpers.arrayChunk(inputArrayMultiple, 7)); // same size
-		assertArrayEquals(outputArrayMultiple8, ArrayHelpers.arrayChunk(inputArrayMultiple, 8)); // bigger size
+		assertArrayEquals(outputArrayMultiple1, ArrayHelpers.arrayChunk(inputArrayMultiple, 1, true)); // every digit
+																										// alone
+		assertArrayEquals(outputArrayMultiple2, ArrayHelpers.arrayChunk(inputArrayMultiple, 2, true)); // by pair
+		assertArrayEquals(outputArrayMultiple3, ArrayHelpers.arrayChunk(inputArrayMultiple, 6, true)); // smaller size
+		assertArrayEquals(outputArrayMultiple7, ArrayHelpers.arrayChunk(inputArrayMultiple, 7, true)); // same size
+		assertArrayEquals(outputArrayMultiple8, ArrayHelpers.arrayChunk(inputArrayMultiple, 8, true)); // bigger size
 
 		// tests on empty array
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, -3));
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 0));
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 1));
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 2));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, -3, true));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 0, true));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 1, true));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 2, true));
 
 		// tests on array with one value
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, -3));
-		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 0));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, -3, true));
+		assertNull(ArrayHelpers.arrayChunk(inputArrayEmpty, 0, true));
 
-		assertArrayEquals(outputArrayUnique, ArrayHelpers.arrayChunk(inputArrayUnique, 1)); // every digit alone
-		assertArrayEquals(outputArrayUnique, ArrayHelpers.arrayChunk(inputArrayUnique, 2)); // bigger size
+		assertArrayEquals(outputArrayUnique, ArrayHelpers.arrayChunk(inputArrayUnique, 1, true)); // every digit alone
+		assertArrayEquals(outputArrayUnique, ArrayHelpers.arrayChunk(inputArrayUnique, 2, true)); // bigger size
 
 	}
 
